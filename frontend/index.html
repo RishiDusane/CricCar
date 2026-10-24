@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CricCareers - Player Info</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="/">CricCareers</a>
+    <form id="search-form" class="search-form">
+      <label class="visually-hidden" for="search-input">Search player by name</label>
+      <input id="search-input" type="search" placeholder="Search player by name...">
+      <button type="submit">Search</button>
+      <button id="show-all-button" class="button-secondary" type="button">Show All</button>
+    </form>
+  </nav>
+
+  <main class="container">
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+
+    <section class="form-section" aria-labelledby="page-title">
+      <h1 id="page-title">Player Info</h1>
+      <form id="player-form">
+        <div class="form-grid">
+          <label>
+            Name:
+            <input name="name" type="text" maxlength="100" required>
+          </label>
+          <label>
+            Age:
+            <input name="age" type="number" min="0" max="150" step="1">
+          </label>
+          <label>
+            Photo URL:
+            <input name="photo_url" type="url">
+          </label>
+          <label>
+            Birthplace:
+            <input name="birthplace" type="text" maxlength="150">
+          </label>
+          <label class="full-width">
+            Career Description:
+            <textarea name="career_desc" rows="4" maxlength="10000"></textarea>
+          </label>
+          <label>
+            No. of Matches:
+            <input name="matches" type="number" min="0" step="1" value="0">
+          </label>
+          <label>
+            Centuries:
+            <input name="centuries" type="number" min="0" step="1" value="0">
+          </label>
+          <label>
+            Wickets:
+            <input name="wickets" type="number" min="0" step="1" value="0">
+          </label>
+          <label>
+            Fifties:
+            <input name="fifties" type="number" min="0" step="1" value="0">
+          </label>
+          <label>
+            Average:
+            <input name="average" type="number" min="0" max="9999.99" step="0.01" value="0">
+          </label>
+        </div>
+        <div class="form-actions">
+          <button id="submit-button" type="submit">Submit</button>
+          <button id="cancel-edit-button" class="button-secondary" type="button" hidden>Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="players-section" aria-labelledby="players-title">
+      <div class="list-heading">
+        <h2 id="players-title">Players</h2>
+      </div>
+      <div id="player-list" class="player-list"></div>
+    </section>
+  </main>
+</body>
+</html>

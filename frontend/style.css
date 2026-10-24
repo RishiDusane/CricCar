@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f6f4;
+  color: #202a25;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  padding: 0.65rem 1rem;
+  border: 1px solid #176b45;
+  border-radius: 5px;
+  background: #176b45;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #105638;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid #f0b429;
+  outline-offset: 2px;
+}
+
+.button-secondary {
+  border-color: #68736d;
+  background: #fff;
+  color: #344139;
+}
+
+.button-secondary:hover {
+  background: #e9eeeb;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem max(1rem, calc((100% - 1100px) / 2));
+  background: #145b3c;
+  color: #fff;
+}
+
+.brand {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  width: min(100%, 560px);
+}
+
+.search-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d2d9d5;
+  border-radius: 5px;
+}
+
+.search-form button {
+  border-color: #fff;
+  background: #fff;
+  color: #145b3c;
+}
+
+.search-form button:hover {
+  background: #e7f0eb;
+}
+
+.container {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 1.5rem auto 3rem;
+}
+
+.message {
+  min-height: 1.5rem;
+  margin: 0 0 0.75rem;
+  color: #145b3c;
+  font-weight: 600;
+}
+
+.message.error {
+  color: #a12b2b;
+}
+
+.form-section,
+.player-card {
+  border: 1px solid #d9e0dc;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgb(24 48 35 / 6%);
+}
+
+.form-section {
+  padding: 1.25rem;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  color: #145b3c;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #bac6bf;
+  border-radius: 5px;
+  color: #202a25;
+}
+
+.form-grid textarea {
+  resize: vertical;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.players-section {
+  margin-top: 2rem;
+}
+
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.player-card {
+  overflow: hidden;
+}
+
+.player-photo,
+.photo-fallback {
+  display: block;
+  width: 100%;
+  height: 190px;
+  background: #e7eeea;
+  object-fit: cover;
+}
+
+.photo-fallback {
+  display: grid;
+  place-items: center;
+  color: #526159;
+  font-weight: 600;
+}
+
+.player-details {
+  padding: 1rem;
+}
+
+.player-details h3 {
+  margin: 0 0 0.5rem;
+  color: #145b3c;
+  font-size: 1.2rem;
+}
+
+.player-details p {
+  margin: 0.3rem 0;
+  overflow-wrap: anywhere;
+}
+
+.player-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.delete-button {
+  border-color: #a12b2b;
+  background: #a12b2b;
+}
+
+.delete-button:hover {
+  background: #842020;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 1rem;
+  border: 1px dashed #bac6bf;
+  border-radius: 5px;
+  color: #526159;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-form {
+    flex-wrap: wrap;
+  }
+
+  .search-form input {
+    flex-basis: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+}
